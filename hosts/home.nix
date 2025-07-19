@@ -1,14 +1,16 @@
-{ config, pkgs, home-manager, ... }:
+{ inputs, config, pkgs, home-manager, ... }:
 
 let
   username = "dylan";
   home = "/Users/${username}";
 
-  importModules = modules: map (m: import m { inherit config pkgs username; }) modules;
+  importModules = modules: map (m: import m { inherit inputs config pkgs username; }) modules;
 in
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.primaryUser = username;
+
+  homebrew.enable = true;
 
   imports = importModules [
     ../modules/fastfetch.nix
@@ -19,6 +21,8 @@ in
 
     ../modules/eza.nix
     ../modules/btop.nix
+
+    ../modules/kubectl.nix
   ];
 
   users.users.${username} = {

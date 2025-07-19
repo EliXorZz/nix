@@ -1,12 +1,9 @@
-{ config, pkgs, username, ... }:
+{ inputs, config, pkgs, username, ... }:
 
 {
-  homebrew = {
-    enable = true;
-    casks = [
-      "ghostty"
-    ];
-  };
+  homebrew.casks = [
+    "ghostty"
+  ];
 
   home-manager.users.${username} = {
     programs.ghostty = {

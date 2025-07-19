@@ -1,23 +1,16 @@
-{ config, pkgs, username, ... }:
+{ inputs, config, pkgs, username, ... }:
 
 {
   home-manager.users.${username} = {
     programs.zsh = {
       enable = true;
+
       localVariables = {
         TERM = "xterm-256color";
       };
 
-      syntaxHighlighting = {
-        enable = true;
-      };
-
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-
-        ];
-      };
+      oh-my-zsh.enable = true;
+      syntaxHighlighting.enable = true;
     };
   };
 }

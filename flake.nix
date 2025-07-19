@@ -32,9 +32,12 @@
       modules = [ 
         configuration
         home-manager.darwinModules.home-manager
-        krewfile.homeManagerModules.krewfile
         ./hosts/home.nix
       ];
+      
+      specialArgs = {
+        inherit inputs;
+      };
     };
   };
 }
