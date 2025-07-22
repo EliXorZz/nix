@@ -23,6 +23,7 @@ in
     ../modules/fzf.nix
     ../modules/eza.nix
     ../modules/btop.nix
+    ../modules/nmap.nix
 
     ../modules/uv.nix
 
