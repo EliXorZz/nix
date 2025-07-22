@@ -19,6 +19,7 @@ in
     ../modules/starship.nix
     ../modules/zsh.nix
 
+    ../modules/bat.nix
     ../modules/fzf.nix
     ../modules/eza.nix
     ../modules/btop.nix
