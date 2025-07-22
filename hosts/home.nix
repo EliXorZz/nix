@@ -19,10 +19,15 @@ in
     ../modules/starship.nix
     ../modules/zsh.nix
 
+    ../modules/fzf.nix
     ../modules/eza.nix
     ../modules/btop.nix
 
+    ../modules/uv.nix
+
     ../modules/kubectl.nix
+    ../modules/k9s.nix
+    ../modules/fluxcd.nix
   ];
 
   users.users.${username} = {

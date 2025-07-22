@@ -12,7 +12,12 @@
 
     programs.krewfile = {
       enable = true;
-      krewPackage = pkgs.krew;
+      plugins = [
+        "ctx"
+        "ns"
+        "neat"
+        "stern"
+      ];
     };
     
     programs.kubecolor = {
@@ -21,8 +26,13 @@
       enableZshIntegration = true;
     };
 
-    programs.zsh.oh-my-zsh = {
-      plugins = [
+    programs.zsh = {
+      initContent = ''
+        source <(k stern --completion zsh)
+        complete -o default -F __start_stern kubectl stern
+      '';
+
+      oh-my-zsh.plugins = [
         "kubectl"
       ];
     };
