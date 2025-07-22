@@ -12,8 +12,6 @@
 
       package = null;
 
-      programs.ghostty.installBatSyntax = true;
-
       settings = {
         theme = "dracula";
 
