@@ -10,7 +10,10 @@ in
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.primaryUser = username;
 
-  homebrew.enable = true;
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";
+  };
 
   imports = importModules [
     ../modules/fastfetch.nix
@@ -29,7 +32,7 @@ in
     ../modules/nmap.nix
 
     ../modules/ffmpeg.nix
-    ../modules/phpbrew.nix
+    ../modules/php.nix
 
     ../modules/uv.nix
 
