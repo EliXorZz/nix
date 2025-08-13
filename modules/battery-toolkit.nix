@@ -4,5 +4,5 @@
   homebrew = {
     taps = ["mhaeuser/mhaeuser"];
     casks = ["battery-toolkit"];
-  }
+  };
 }

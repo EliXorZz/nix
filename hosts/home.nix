@@ -28,6 +28,8 @@ in
     ../modules/btop.nix
     ../modules/nmap.nix
 
+    ../modules/ffmpeg.nix
+
     ../modules/uv.nix
 
     ../modules/kubectl.nix
