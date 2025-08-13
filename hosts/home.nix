@@ -29,6 +29,7 @@ in
     ../modules/nmap.nix
 
     ../modules/ffmpeg.nix
+    ../modules/phpbrew.nix
 
     ../modules/uv.nix
 
