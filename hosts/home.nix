@@ -15,6 +15,9 @@ in
   imports = importModules [
     ../modules/fastfetch.nix
 
+    ../modules/battery-toolkit.nix
+    ../modules/aerospace.nix
+
     ../modules/ghostty.nix
     ../modules/starship.nix
     ../modules/zsh.nix

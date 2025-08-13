@@ -21,6 +21,8 @@
         window-padding-x = 20;
         window-padding-y = 20;
 
+        window-save-state = "never";
+
         background-opacity = 0.7;
         background-blur-radius = 20;
         mouse-hide-while-typing = true;

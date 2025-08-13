@@ -17,6 +17,8 @@
         "ns"
         "neat"
         "stern"
+        "explore"
+        "popeye"
       ];
     };
     
