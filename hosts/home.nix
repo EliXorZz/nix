@@ -24,6 +24,8 @@ in
     ../modules/ghostty.nix
     ../modules/bruno.nix
 
+    ../modules/orbstack.nix
+
     ../modules/starship.nix
     ../modules/zsh.nix
 
