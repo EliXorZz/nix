@@ -22,6 +22,8 @@ in
     ../modules/aerospace.nix
 
     ../modules/ghostty.nix
+    ../modules/bruno.nix
+
     ../modules/starship.nix
     ../modules/zsh.nix
 
