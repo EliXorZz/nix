@@ -1,19 +1,19 @@
 { inputs, config, pkgs, username, ... }:
 
 let
-  phps = [ "php81" "php82" "php83" "php84" ];
+  versions = [ "81" "82" "83" "84" ];
   extensions = [ "redis" ];
 in
 {
   home-manager.users.${username} = {
     home.shellAliases = builtins.listToAttrs (
-      map (php: let
-        cmd = "nix-shell -p '${php}.withExtensions ({ all, enabled }: enabled ++ (with all; [ ${builtins.concatStringsSep " " extensions} ]))' ${php}Packages.composer";
+      map (version: let
+        cmd = "nix-shell -p 'php${version}.withExtensions ({ all, enabled }: enabled ++ (with all; [ ${builtins.concatStringsSep " " extensions} ]))' php${version}Packages.composer";
       in {
         name = php;
-        value = cmd;
+        value = "php${version}";
       })
-      phps
+      versions
     );
   };
 }
