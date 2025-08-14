@@ -61,6 +61,10 @@ in
       };
 
       programs.home-manager.enable = true;
+
+      home.shellAliases = {
+        nix-shell = "nix-shell --run $SHELL";
+      };
     };
   };
 }
