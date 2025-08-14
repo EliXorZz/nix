@@ -6,11 +6,11 @@ in
 {
   home-manager.users.${username} = {
     home.shellAliases = builtins.listToAttrs (
-      map (node: let
+      map (version: let
         cmd = "nix-shell -p nodejs_${version}";
       in {
-        name = node;
-        value = "node${version}";
+        name = "node${version}";
+        value = cmd;
       })
       versions
     );

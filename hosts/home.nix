@@ -35,6 +35,7 @@ in
 
     ../modules/ffmpeg.nix
     ../modules/php.nix
+    ../modules/node.nix
 
     ../modules/uv.nix
 
