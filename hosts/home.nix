@@ -66,7 +66,7 @@ in
       programs.home-manager.enable = true;
 
       home.shellAliases = {
-        nix-shell = "nix-shell --run $SHELL";
+        nix-shell = "nix-shell --run /bin/zsh";
       };
     };
   };
