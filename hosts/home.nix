@@ -36,6 +36,7 @@ in
     ../modules/nmap.nix
 
     ../modules/ffmpeg.nix
+    ../modules/go.nix
     ../modules/php.nix
     ../modules/node.nix
 
