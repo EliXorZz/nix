@@ -41,6 +41,7 @@ in
     ../modules/node.nix
 
     ../modules/uv.nix
+    ../modules/tabview.nix
 
     ../modules/kubectl.nix
     ../modules/k9s.nix
