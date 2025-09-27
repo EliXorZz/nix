@@ -10,7 +10,7 @@
         enable-normalization-flatten-containers = true;
         enable-normalization-opposite-orientation-for-nested-containers = true;
 
-        accordion-padding = 20;
+        accordion-padding = 0;
 
         default-root-container-layout = "tiles";
         default-root-container-orientation = "auto";
@@ -32,21 +32,21 @@
         };
 
         mode.main.binding = {
-          alt-ctrl-backspace = "";
-          alt-ctrl-enter = "";
+          # alt-ctrl-backspace = "";
+          # alt-ctrl-enter = "";
 
-          alt-ctrl-left = "";
-          alt-ctrl-down = "";
-          alt-ctrl-up = "";
-          alt-ctrl-right = "";
+          alt-ctrl-left = "move left";
+          alt-ctrl-down = "move down";
+          alt-ctrl-up = "move up";
+          alt-ctrl-right = "move right";
 
-          alt-cmd-left = "";
-          alt-cmd-down = "";
-          alt-cmd-up = "";
-          alt-cmd-right = "";
+          alt-cmd-left = "focus left";
+          alt-cmd-down = "focus down";
+          alt-cmd-up = "focus up";
+          alt-cmd-right = "focus right";
 
-          alt-x = "";
-          alt-y = "";
+          alt-x = "resize smart +50";
+          alt-y = "resize smart -50";
 
           ctrl-1 = "workspace 1";
           ctrl-2 = "workspace 2";
@@ -58,19 +58,15 @@
           ctrl-8 = "workspace 8";
           ctrl-9 = "workspace 9";
 
-          ctrl-f = "workspace Main";
-
-          ctrl-shift-1 = "move-node-to-workspace 1";
-          ctrl-shift-2 = "move-node-to-workspace 2";
-          ctrl-shift-3 = "move-node-to-workspace 3";
-          ctrl-shift-4 = "move-node-to-workspace 4";
-          ctrl-shift-5 = "move-node-to-workspace 5";
-          ctrl-shift-6 = "move-node-to-workspace 6";
-          ctrl-shift-7 = "move-node-to-workspace 7";
-          ctrl-shift-8 = "move-node-to-workspace 8";
-          ctrl-shift-9 = "move-node-to-workspace 9";
-
-          ctrl-shift-f = "move-node-to-workspace Main";
+          ctrl-shift-1 = "move-node-to-workspace 1 --focus-follows-window";
+          ctrl-shift-2 = "move-node-to-workspace 2 --focus-follows-window";
+          ctrl-shift-3 = "move-node-to-workspace 3 --focus-follows-window";
+          ctrl-shift-4 = "move-node-to-workspace 4 --focus-follows-window";
+          ctrl-shift-5 = "move-node-to-workspace 5 --focus-follows-window";
+          ctrl-shift-6 = "move-node-to-workspace 6 --focus-follows-window";
+          ctrl-shift-7 = "move-node-to-workspace 7 --focus-follows-window";
+          ctrl-shift-8 = "move-node-to-workspace 8 --focus-follows-window";
+          ctrl-shift-9 = "move-node-to-workspace 9 --focus-follows-window";
 
           alt-tab = "workspace-back-and-forth";
           alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
@@ -82,6 +78,7 @@
           esc = ["reload-config" "mode main"];
           r = ["flatten-workspace-tree" "mode main"];
           f = ["layout floating tiling" "mode main"];
+          l = ["layout accordion" "mode main"];
           backspace = ["close-all-windows-but-current" "mode main"];
 
           left = ["join-with left" "mode main"];
@@ -94,6 +91,59 @@
           "1" = "main";
           "2" = "secondary";
         };
+
+        on-window-detected = [
+          {
+            "if" = {
+              app-name-regex-substring = "IntelliJ|PhpStorm|WebStorm|PyCharm|GoLand";
+            };
+            "run" = [
+              "move-node-to-workspace 1 --focus-follows-window"
+            ];
+          }
+          {
+            "if" = {
+              app-id = "com.mitchellh.ghostty";
+            };
+            "run" = [
+              "move-node-to-workspace 2 --focus-follows-window"
+            ];
+          }
+          {
+            "if" = {
+              app-id = "org.mozilla.firefox";
+            };
+            "run" = [
+              "move-node-to-workspace 3 --focus-follows-window"
+            ];
+          }
+          {
+            "if" = {
+              app-id = "com.spotify.client";
+            };
+            "run" = [
+              "layout accordion"
+              "move-node-to-workspace 9 --focus-follows-window"
+            ];
+          }
+          {
+            "if" = {
+              app-id = "com.hnc.Discord";
+            };
+            "run" = [
+              "layout accordion"
+              "move-node-to-workspace 9 --focus-follows-window"
+            ];
+          }
+          {
+            "if" = {
+              app-id = "com.apple.finder";
+            };
+            "run" = [
+              "layout floating"
+            ];
+          }
+        ];
       };
     };
   };
