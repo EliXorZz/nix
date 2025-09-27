@@ -95,14 +95,6 @@
         on-window-detected = [
           {
             "if" = {
-              app-name-regex-substring = "IntelliJ|PhpStorm|WebStorm|PyCharm|GoLand";
-            };
-            "run" = [
-              "move-node-to-workspace 1 --focus-follows-window"
-            ];
-          }
-          {
-            "if" = {
               app-id = "com.mitchellh.ghostty";
             };
             "run" = [
@@ -122,7 +114,6 @@
               app-id = "com.spotify.client";
             };
             "run" = [
-              "layout accordion"
               "move-node-to-workspace 9 --focus-follows-window"
             ];
           }
@@ -131,7 +122,6 @@
               app-id = "com.hnc.Discord";
             };
             "run" = [
-              "layout accordion"
               "move-node-to-workspace 9 --focus-follows-window"
             ];
           }
