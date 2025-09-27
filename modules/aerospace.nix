@@ -103,12 +103,20 @@
           }
 
           {
-            "if" = {
-              app-name-regex-substring = "IntelliJ|PhpStorm|WebStorm|PyCharm|GoLand";
-            };
-            "run" = [
-              "move-node-to-workspace 1 --focus-follows-window"
-            ];
+            "if".app-name-regex-substring = "PhpStorm";
+            run = "move-node-to-workspace 1 --focus-follows-window";
+          }
+          {
+            "if".app-name-regex-substring = "WebStorm";
+            run = "move-node-to-workspace 1 --focus-follows-window";
+          }
+          {
+            "if".app-name-regex-substring = "PyCharm";
+            run = "move-node-to-workspace 1 --focus-follows-window";
+          }
+          {
+            "if".app-name-regex-substring = "GoLand";
+            run = "move-node-to-workspace 1 --focus-follows-window";
           }
 
           {
