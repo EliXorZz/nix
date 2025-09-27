@@ -101,7 +101,16 @@
             "if".workspace = "8";
             run = "layout floating";
           }
-          
+
+          {
+            "if" = {
+              app-name-regex-substring = "IntelliJ|PhpStorm|WebStorm|PyCharm|GoLand";
+            };
+            "run" = [
+              "move-node-to-workspace 1 --focus-follows-window"
+            ];
+          }
+
           {
             "if" = {
               app-id = "com.mitchellh.ghostty";
