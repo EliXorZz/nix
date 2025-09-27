@@ -94,6 +94,15 @@
 
         on-window-detected = [
           {
+            "if".workspace = "9";
+            run = "layout floating";
+          }
+          {
+            "if".workspace = "8";
+            run = "layout floating";
+          }
+          
+          {
             "if" = {
               app-id = "com.mitchellh.ghostty";
             };
@@ -107,6 +116,14 @@
             };
             "run" = [
               "move-node-to-workspace 3 --focus-follows-window"
+            ];
+          }
+          {
+            "if" = {
+              app-id = "com.openai.chat";
+            };
+            "run" = [
+              "move-node-to-workspace 7 --focus-follows-window"
             ];
           }
           {
